@@ -1,0 +1,41 @@
+/* YourComponent.css */
+
+.image-container {
+  position: relative;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.hover-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.first-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hide {
+  transform: scale(0) translateX(20px);
+  opacity: 0;
+}
+
+.second-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform-origin: top right;
+  transition: opacity 0.1s ease, transform 1.9s ease; /* Add a smooth transition effect */
+  transform: translateY(-20px) translateX(100%);
+}
+
+.hover-container:hover .first-image {
+  transform: scale(0.8) translateX(20px); /* Adjust scale and translation as needed */
+}
+
+.hover-container:hover .second-image {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
